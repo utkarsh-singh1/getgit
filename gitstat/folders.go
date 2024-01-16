@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"os"
 	"os/user"
@@ -172,5 +171,7 @@ func dumpStringsSliceToFile(repos []string, filePath string) {
 
 	content := strings.Join(repos, "\n")
 
-	ioutil.WriteFile(filePath, []byte(content), 0755)
+	os.WriteFile(filePath, []byte(content), 0755)
+
+	
 }
